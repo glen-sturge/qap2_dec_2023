@@ -1,0 +1,2082 @@
+{
+	"info": {
+		"_postman_id": "4bbe08e3-f84c-4ca6-853e-c58ee3cd8ea4",
+		"name": "QAP2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28311214"
+	},
+	"item": [
+		{
+			"name": "puts/patches (relationships)",
+			"item": [
+				{
+					"name": "aircraft_airports",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/uri-list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "http://localhost:8080/airport/1\r\nhttp://localhost:8080/airport/2"
+						},
+						"url": {
+							"raw": "http://localhost:8080/aircraft/1/airports",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aircraft",
+								"1",
+								"airports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aircraft_passengers",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/uri-list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "http://localhost:8080/passenger/1\r\nhttp://localhost:8080/passenger/2"
+						},
+						"url": {
+							"raw": "http://localhost:8080/aircraft/1/passengers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aircraft",
+								"1",
+								"passengers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "passengers_aircraft",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/uri-list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "http://localhost:8080/aircraft/1"
+						},
+						"url": {
+							"raw": "http://localhost:8080/passenger/1/aircrafts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"passenger",
+								"1",
+								"aircrafts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "passengers_city",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/uri-list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "http://localhost:8080/city/1"
+						},
+						"url": {
+							"raw": "http://localhost:8080/passenger/1/city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"passenger",
+								"1",
+								"city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "airport_city",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/uri-list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "http://localhost:8080/city/1"
+						},
+						"url": {
+							"raw": "http://localhost:8080/airport/1/city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airport",
+								"1",
+								"city"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "city_airports",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/uri-list",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "http://localhost:8080/airport/1\r\nhttp://localhost:8080/airport/2"
+						},
+						"url": {
+							"raw": "http://localhost:8080/city/1/airports",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"city",
+								"1",
+								"airports"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INIT",
+			"item": [
+				{
+					"name": "aircraft-post",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"AAA111\",\r\n    \"type\": \"test type 1\",\r\n    \"brand\": \"test brand 1\",\r\n    \"model\": \"test model 1\",\r\n    \"numberOfPassengers\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"BBB111\",\r\n    \"type\": \"test type 1\",\r\n    \"brand\": \"test brand 1\",\r\n    \"model\": \"test model 1\",\r\n    \"numberOfPassengers\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"CCC111\",\r\n    \"type\": \"test type 1\",\r\n    \"brand\": \"test brand 1\",\r\n    \"model\": \"test model 1\",\r\n    \"numberOfPassengers\": 100\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"DDD111\",\r\n    \"type\": \"test type 2\",\r\n    \"brand\": \"test brand 1\",\r\n    \"model\": \"test model 3\",\r\n    \"numberOfPassengers\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"DDD111\",\r\n    \"type\": \"test type 1\",\r\n    \"brand\": \"test brand 2\",\r\n    \"model\": \"test model 4\",\r\n    \"numberOfPassengers\": 150\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"EEE111\",\r\n    \"type\": \"test type 3\",\r\n    \"brand\": \"test brand 3\",\r\n    \"model\": \"test model 5\",\r\n    \"numberOfPassengers\": 140\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"FFF111\",\r\n    \"type\": \"test type 1\",\r\n    \"brand\": \"test brand 2\",\r\n    \"model\": \"test model 6\",\r\n    \"numberOfPassengers\": 120\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"GGG111\",\r\n    \"type\": \"test type 2\",\r\n    \"brand\": \"test brand 3\",\r\n    \"model\": \"test model 7\",\r\n    \"numberOfPassengers\": 140\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 7",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"HHH111\",\r\n    \"type\": \"test type 4\",\r\n    \"brand\": \"test brand 3\",\r\n    \"model\": \"test model 8\",\r\n    \"numberOfPassengers\": 160\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 8",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tailNumber\": \"III111\",\r\n    \"type\": \"test type 1\",\r\n    \"brand\": \"test brand 4\",\r\n    \"model\": \"test model 9\",\r\n    \"numberOfPassengers\": 300\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "airport-post",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport A\",\r\n    \"code\": \"AAA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport B\",\r\n    \"code\": \"BBB\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport C\",\r\n    \"code\": \"CCC\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport D\",\r\n    \"code\": \"DDD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport E\",\r\n    \"code\": \"EEE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport F\",\r\n    \"code\": \"FFF\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport G\",\r\n    \"code\": \"GGG\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 7",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport H\",\r\n    \"code\": \"HHH\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 8",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport I\",\r\n    \"code\": \"III\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 9",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Airport J\",\r\n    \"code\": \"JJJ\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/airport",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "city-post",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 1\",\r\n    \"state\": \"AA\",\r\n    \"population\": 20000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 2\",\r\n    \"state\": \"BB\",\r\n    \"population\": 30000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 3\",\r\n    \"state\": \"CC\",\r\n    \"population\": 10000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 4\",\r\n    \"state\": \"DD\",\r\n    \"population\": 50000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 5\",\r\n    \"state\": \"AA\",\r\n    \"population\": 25000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 6\",\r\n    \"state\": \"BB\",\r\n    \"population\": 37000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 7\",\r\n    \"state\": \"CC\",\r\n    \"population\": 72000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 7",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 8\",\r\n    \"state\": \"DD\",\r\n    \"population\": 22000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 8",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 9\",\r\n    \"state\": \"AA\",\r\n    \"population\": 48000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 9",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"city 10\",\r\n    \"state\": \"EE\",\r\n    \"population\": 69000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "passenger-post",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Alice\",\r\n    \"lastName\": \"Ainsley\",\r\n    \"phoneNumber\": \"7771112222\",\r\n    \"email\": \"alice.ainsley@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Bob\",\r\n    \"lastName\": \"Barker\",\r\n    \"phoneNumber\": \"7772223333\",\r\n    \"email\": \"bob.barker@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Carol\",\r\n    \"lastName\": \"Carlson\",\r\n    \"phoneNumber\": \"7773334444\",\r\n    \"email\": \"carol.carlson@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"David\",\r\n    \"lastName\": \"Dixon\",\r\n    \"phoneNumber\": \"7125559999\",\r\n    \"email\": \"david.dixon@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Erin\",\r\n    \"lastName\": \"Erickson\",\r\n    \"phoneNumber\": \"7606227722\",\r\n    \"email\": \"Erin.Erickson@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Frank\",\r\n    \"lastName\": \"Forge\",\r\n    \"phoneNumber\": \"7603312745\",\r\n    \"email\": \"frank.forge@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 6",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Garret\",\r\n    \"lastName\": \"George\",\r\n    \"phoneNumber\": \"7188405223\",\r\n    \"email\": \"garret.george@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 7",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Harriet\",\r\n    \"lastName\": \"Homer\",\r\n    \"phoneNumber\": \"7182226435\",\r\n    \"email\": \"harriet.homer@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 8",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Iris\",\r\n    \"lastName\": \"Ingle\",\r\n    \"phoneNumber\": \"7184206781\",\r\n    \"email\": \"harriet.homer@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy 9",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Jared\",\r\n    \"lastName\": \"Juice\",\r\n    \"phoneNumber\": \"7524204444\",\r\n    \"email\": \"jared.juice@testmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GETS",
+			"item": [
+				{
+					"name": "BASICS",
+					"item": [
+						{
+							"name": "aircraft",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "airport",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "city",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "passenger",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Aircraft searches",
+					"item": [
+						{
+							"name": "findByTailNumber",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByTailNumber?tailNumber=HHH111",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByTailNumber"
+									],
+									"query": [
+										{
+											"key": "tailNumber",
+											"value": "HHH111"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByType",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByType?type=test%20type%203",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByType"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "test%20type%203"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByBrand",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByBrand?brand=test%20brand%203",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByBrand"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "test%20brand%203"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByModel",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByModel?model=test%20model%201",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByModel"
+									],
+									"query": [
+										{
+											"key": "model",
+											"value": "test%20model%201"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByTypeAndBrand",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByTypeAndBrand?type=test%20type%202&&brand=test%20brand%203",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByTypeAndBrand"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "test%20type%202"
+										},
+										{
+											"key": null,
+											"value": null
+										},
+										{
+											"key": "brand",
+											"value": "test%20brand%203"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByNumberOfPassengers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByNumberOfPassengers?numberOfPassengers=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByNumberOfPassengers"
+									],
+									"query": [
+										{
+											"key": "numberOfPassengers",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByNumberOfPassengersLessThan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByNumberOfPassengersLessThan?numberOfPassengers=150",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByNumberOfPassengersLessThan"
+									],
+									"query": [
+										{
+											"key": "numberOfPassengers",
+											"value": "150"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByNumberOfPassengersGreaterThan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/search/findByNumberOfPassengersGreaterThan?numberOfPassengers=150",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"search",
+										"findByNumberOfPassengersGreaterThan"
+									],
+									"query": [
+										{
+											"key": "numberOfPassengers",
+											"value": "150"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Airport searches",
+					"item": [
+						{
+							"name": "findByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/airport/search/findByName?name=Airport%20A",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Airport%20A"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByCode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/airport/search/findByCode?code=BBB",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport",
+										"search",
+										"findByCode"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "BBB"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "City searches",
+					"item": [
+						{
+							"name": "findByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city/search/findByName?name=city%202",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"search",
+										"findByName"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "city%202"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByState",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city/search/findByState?state=DD",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"search",
+										"findByState"
+									],
+									"query": [
+										{
+											"key": "state",
+											"value": "DD"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByPopulation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city/search/findByPopulation?population=20000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"search",
+										"findByPopulation"
+									],
+									"query": [
+										{
+											"key": "population",
+											"value": "20000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByPopulationLessThan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city/search/findByPopulationLessThan?population=25000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"search",
+										"findByPopulationLessThan"
+									],
+									"query": [
+										{
+											"key": "population",
+											"value": "25000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByPopulationGreaterThan",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city/search/findByPopulationGreaterThan?population=25000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"search",
+										"findByPopulationGreaterThan"
+									],
+									"query": [
+										{
+											"key": "population",
+											"value": "25000"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Passenger searches",
+					"item": [
+						{
+							"name": "findByFirstName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger/search/findByFirstName?firstName=Iris",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger",
+										"search",
+										"findByFirstName"
+									],
+									"query": [
+										{
+											"key": "firstName",
+											"value": "Iris"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByLastName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger/search/findByLastName?lastName=Erickson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger",
+										"search",
+										"findByLastName"
+									],
+									"query": [
+										{
+											"key": "lastName",
+											"value": "Erickson"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByPhoneNumber",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger/search/findByPhoneNumber?phoneNumber=7772223333",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger",
+										"search",
+										"findByPhoneNumber"
+									],
+									"query": [
+										{
+											"key": "phoneNumber",
+											"value": "7772223333"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByEmail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger/search/findByEmail?email=bob.barker@testmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger",
+										"search",
+										"findByEmail"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "bob.barker@testmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Relationships",
+					"item": [
+						{
+							"name": "aircraft_airports",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/1/airports",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"1",
+										"airports"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "aircraft_passengers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/aircraft/1/passengers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"aircraft",
+										"1",
+										"passengers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "passenger_aircraft",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger/1/aircrafts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger",
+										"1",
+										"aircrafts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "passenger_city",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/passenger/1/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"passenger",
+										"1",
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "airport_city",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/airport/1/city",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"airport",
+										"1",
+										"city"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "city_airports",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city/1/airports",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"1",
+										"airports"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
