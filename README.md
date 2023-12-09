@@ -11,5 +11,5 @@ To build Docker Image:
   application should now be running from docker image, can confirm in docker desktop that status is running.
   Assuming mysql service is running you should be able to start testing with postman.
 
-  Postman collection to be uploaded with project as well.
+  Postman collection to be uploaded with project, simply import it into POSTMAN.
   
