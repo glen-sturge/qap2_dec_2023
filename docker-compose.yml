@@ -1,0 +1,8 @@
+version: '3'
+services:
+  my-rest-api-example:
+    image: keyin/qap2_dec_2023:latest
+    ports:
+      - 8080:8080
+    environment:
+      - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/fall_2023
